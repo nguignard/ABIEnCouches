@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ABIEnCouches
 {
-    public partial class Form1 : Form
+    public partial class frmListCollab : Form
     {
-        public Form1()
+        public frmListCollab()
         {
             InitializeComponent();
         }
