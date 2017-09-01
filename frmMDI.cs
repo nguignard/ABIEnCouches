@@ -25,13 +25,14 @@ namespace ABIEnCouches
 
         private void initialiseListeCollab()
         {
-            Collaborateur.Collaborateurs = new System.Collections.Generic.SortedDictionary<int, Collaborateur>();
-            Collaborateur roger = new Collaborateur(1, "M", "DUPOND", "Roger", "marie", true);
-            Cdi contrat = new Cdi(1, new DateTime(2010, 5, 5), "Chef de Projet", "Cadre", 5000);
-            roger.AddContrat(contrat);
-            roger.AddCollaborateur(roger);
+            //Collaborateur.Collaborateurs = new System.Collections.Generic.SortedDictionary<int, Collaborateur>();
+            Collaborateur collaborateur = new Collaborateur(10, "M", "DUPOND", "Roger", "marie", true);
+            Cdi contrat = new Cdi(10, new DateTime(2010, 5, 5), "Chef de Projet", "Cadre", 5000);
 
-            System.Console.WriteLine(roger.ToString());
+            collaborateur.AddContrat(contrat);
+            collaborateur.AddCollaborateur(collaborateur);
+
+            System.Console.WriteLine(contrat.ToString());
 
         }
 
