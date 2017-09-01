@@ -18,32 +18,10 @@ namespace ABIEnCouches
         public frmMDI()
         {
             frmMDI.Ref = this;
-            initialiseListeCollab();
             InitializeComponent();
+            ctrlListerCollaborateur ctrlListerCollab = new ctrlListerCollaborateur();
         }
 
-
-        private void initialiseListeCollab()
-        {
-            Collaborateur.Collaborateurs = new System.Collections.Generic.SortedDictionary<int, Collaborateur>();
-            Collaborateur collaborateur = new Collaborateur( "M", "DUPOND", "Roger", "marie", true);
-            Cdi contrat = new Cdi( new DateTime(2010, 5, 5), "Chef de Projet", "Cadre", 5000);
-
-            collaborateur.AddContrat(contrat);
-            collaborateur.AddCollaborateur(collaborateur);
-            Console.Write(collaborateur.ToString());
-            Console.Write(contrat.ToString());
-
-            collaborateur = new Collaborateur( "Mme", "DUPONt", "Rogee", "marie", false);
-             contrat = new Cdi( new DateTime(2012,6,6), "CDI", "employee", 1500);
-            Console.Write(contrat.ToString());
-
-            collaborateur.AddContrat(contrat);
-            collaborateur.AddCollaborateur(collaborateur);
-
-            Console.Write(collaborateur.ToString());
-            
-        }
 
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -133,6 +111,12 @@ namespace ABIEnCouches
 
         private void collaborateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+
+            //TODO
+
+
+
 
         }
     }

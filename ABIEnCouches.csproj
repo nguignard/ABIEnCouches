@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlListerCollaborateur.cs" />
     <Compile Include="frmListCollab.cs">
       <SubType>Form</SubType>
     </Compile>
