@@ -15,6 +15,35 @@ namespace ABIEnCouches
         public frmListCollab()
         {
             InitializeComponent();
+            afficheCollaborateurs();
         }
+
+        private void afficheCollaborateurs()
+        {
+            
+            this.grdCollaborateurs.DataSource = Collaborateur.GetCollaborateurs();
+
+
+
+            this.grdCollaborateurs.Refresh();
+
+            this.btnArchiver.Enabled = (this.grdCollaborateurs.CurrentRow == null ? false : true);
+
+
+        }
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

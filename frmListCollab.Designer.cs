@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdCollaborateurs = new System.Windows.Forms.DataGridView();
             this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnArchiver = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCollaborateurs)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // grdCollaborateurs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 98);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(806, 311);
-            this.dataGridView1.TabIndex = 0;
+            this.grdCollaborateurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCollaborateurs.Location = new System.Drawing.Point(12, 98);
+            this.grdCollaborateurs.Name = "grdCollaborateurs";
+            this.grdCollaborateurs.Size = new System.Drawing.Size(806, 311);
+            this.grdCollaborateurs.TabIndex = 0;
             // 
             // btnAjouter
             // 
@@ -53,14 +53,14 @@
             this.btnAjouter.Text = "&Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // btnArchiver
             // 
-            this.btnDelete.Location = new System.Drawing.Point(743, 487);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "&Détruire";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnArchiver.Location = new System.Drawing.Point(743, 487);
+            this.btnArchiver.Name = "btnArchiver";
+            this.btnArchiver.Size = new System.Drawing.Size(75, 23);
+            this.btnArchiver.TabIndex = 5;
+            this.btnArchiver.Text = "Archiver";
+            this.btnArchiver.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -85,12 +85,13 @@
             this.ClientSize = new System.Drawing.Size(830, 519);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnArchiver);
             this.Controls.Add(this.btnAjouter);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grdCollaborateurs);
             this.Name = "frmListCollab";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Liste des Collaborateurs";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCollaborateurs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,9 +99,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdCollaborateurs;
         private System.Windows.Forms.Button btnAjouter;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnArchiver;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
     }
