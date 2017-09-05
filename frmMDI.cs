@@ -13,8 +13,8 @@ namespace ABIEnCouches
     public partial class frmMDI : Form
     {
         static public frmMDI Ref; //Reference du MDI en statique accessible à tous
-        //private int childFormNumber = 0;
-
+                                  //private int childFormNumber = 0;
+       
 
             /// <summary>
             /// Constructeur frmMDI
@@ -29,23 +29,25 @@ namespace ABIEnCouches
         //MENU frmMDI----------------------------------------------------
         private void collaborateursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ctrlListerCollaborateur ctrl = new ctrlListerCollaborateur();
+              ctrlListerCollaborateur ctrl = new ctrlListerCollaborateur();
         }
 
 
 
 
 
-        //private void OpenFile(object sender, EventArgs e)
-        //{
-        //    OpenFileDialog openFileDialog = new OpenFileDialog();
-        //    openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-        //    openFileDialog.Filter = "Fichiers texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*";
-        //    if (openFileDialog.ShowDialog(this) == DialogResult.OK)
-        //    {
-        //        string FileName = openFileDialog.FileName;
-        //    }
-        //}
+        private void OpenFile(object sender, EventArgs e)
+        {
+              ctrlListerCollaborateur ctrl = new ctrlListerCollaborateur();
+
+    //OpenFileDialog openFileDialog = new OpenFileDialog();
+    //openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+    //openFileDialog.Filter = "Fichiers texte (*.txt)|*.txt|Tous les fichiers (*.*)|*.*";
+    //if (openFileDialog.ShowDialog(this) == DialogResult.OK)
+    //{
+    //    string FileName = openFileDialog.FileName;
+    //}
+        }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
