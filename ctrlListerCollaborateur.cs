@@ -16,6 +16,7 @@ namespace ABIEnCouches
         public ctrlListerCollaborateur()
         {
             this.instancieCollaborateurs();
+            ShowFormListeCollab(this.frmCollaborateurs);
             this.frmCollaborateurs.grdCollaborateurs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCollaborateurs_DoubleClick);
 
 
@@ -23,7 +24,7 @@ namespace ABIEnCouches
             //this.frmCollaborateurs.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
 
 
-            ShowFormListeCollab(this.frmCollaborateurs);
+         
 
         }
 
@@ -38,9 +39,9 @@ namespace ABIEnCouches
         {
             Int32 laCle; //matriculle
             laCle = (Int32)frmCollaborateurs.grdCollaborateurs.CurrentRow.Cells[0].Value;
-            Collaborateur leCollaborateur = listeCollaborateurs.RestituerCollaborateur(laCle);
+            this.leCollaborateur = listeCollaborateurs.RestituerCollaborateur(laCle);
             ctrlVisuCollaborateur ctrlVisu = new ctrlVisuCollaborateur(leCollaborateur);
-
+            
             this.frmCollaborateurs.afficheCollaborateurs(listeCollaborateurs);
 
         }
@@ -62,7 +63,7 @@ namespace ABIEnCouches
 
             collaborateur.AddContrat(contrat);
             listeCollaborateurs.AddCollaborateur(collaborateur);
-            collaborateur = new Collaborateur("Mme", "DUPONt", "Rogee", "marie", false);
+            collaborateur = new Collaborateur("F", "DUPONt", "Rogee", "marie", false);
             contrat = new Cdi(new DateTime(2012, 6, 6), "CDI", "employee", 1500);
 
             collaborateur.AddContrat(contrat);

@@ -16,5 +16,15 @@ namespace ABIEnCouches
         {
             InitializeComponent();
         }
+
+        private void btnModifier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmVisuCollaborateur_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
