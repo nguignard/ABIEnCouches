@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ctrlListerCollaborateur.cs" />
+    <Compile Include="ctrlVisuCollaborateur.cs" />
     <Compile Include="frmListCollab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +59,12 @@
     <Compile Include="frmMDI.Designer.cs">
       <DependentUpon>frmMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisuCollaborateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisuCollaborateur.Designer.cs">
+      <DependentUpon>frmVisuCollaborateur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmListCollab.resx">
@@ -65,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMDI.resx">
       <DependentUpon>frmMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisuCollaborateur.resx">
+      <DependentUpon>frmVisuCollaborateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

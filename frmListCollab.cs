@@ -15,19 +15,37 @@ namespace ABIEnCouches
     public partial class frmListCollab : Form
     {
 
-        private Collaborateurs listeCollaborateurs;
+        //private Collaborateurs listeCollaborateurs;
+
         public frmListCollab(Collaborateurs listeCollaborateurs)
         {
             InitializeComponent();
             this.afficheCollaborateurs(listeCollaborateurs);
         }
 
-        private void afficheCollaborateurs()
+        internal void afficheCollaborateurs(Collaborateurs listeCollaborateurs)
         {
-            this.grdCollaborateurs.DataSource = Collaborateur.ListeCollaborateurs();
+            this.grdCollaborateurs.DataSource = listeCollaborateurs.ListeCollaborateurs();
             this.grdCollaborateurs.Refresh();
-            this.btnArchiver.Enabled = (this.grdCollaborateurs.CurrentRow == null ? false : true);
+            this.btnFermer.Enabled = true;
+                //(this.grdCollaborateurs.CurrentRow == null ? false : true);
         }
+
+
+
+
+        /// <summary>
+        /// btnFermer_Click ferme l'application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
 
     }
 }

@@ -11,20 +11,21 @@ namespace ABIEnCouches
     {
         private Collaborateurs listeCollaborateurs;
         private frmListCollab frmCollaborateurs;
+        private Collaborateur leCollaborateur;
 
         public ctrlListerCollaborateur()
         {
             this.instancieCollaborateurs();
-          
-            this.frmCollaborateurs.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-            this.frmCollaborateurs.btnArchiver.Click += new System.EventHandler(this.btnArchiver_Click);
+            this.frmCollaborateurs.grdCollaborateurs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCollaborateurs_DoubleClick);
+
+
+
+            //this.frmCollaborateurs.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+
 
             ShowFormListeCollab(this.frmCollaborateurs);
 
         }
-
-
-
 
 
         private void btnAjouter_Click(object sender, EventArgs e)
@@ -33,10 +34,19 @@ namespace ABIEnCouches
 
         }
 
-        private void btnArchiver_Click(object sender, EventArgs e)
+        private void grdCollaborateurs_DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Int32 laCle; //matriculle
+            laCle = (Int32)frmCollaborateurs.grdCollaborateurs.CurrentRow.Cells[0].Value;
+            Collaborateur leCollaborateur = listeCollaborateurs.RestituerCollaborateur(laCle);
+            ctrlVisuCollaborateur ctrlVisu = new ctrlVisuCollaborateur(leCollaborateur);
+
+            this.frmCollaborateurs.afficheCollaborateurs(listeCollaborateurs);
 
         }
+
+
+
 
 
 

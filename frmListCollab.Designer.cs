@@ -30,7 +30,7 @@
         {
             this.grdCollaborateurs = new System.Windows.Forms.DataGridView();
             this.btnAjouter = new System.Windows.Forms.Button();
-            this.btnArchiver = new System.Windows.Forms.Button();
+            this.btnFermer = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdCollaborateurs)).BeginInit();
@@ -53,14 +53,15 @@
             this.btnAjouter.Text = "&Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
             // 
-            // btnArchiver
+            // btnFermer
             // 
-            this.btnArchiver.Location = new System.Drawing.Point(743, 487);
-            this.btnArchiver.Name = "btnArchiver";
-            this.btnArchiver.Size = new System.Drawing.Size(75, 23);
-            this.btnArchiver.TabIndex = 5;
-            this.btnArchiver.Text = "Archiver";
-            this.btnArchiver.UseVisualStyleBackColor = true;
+            this.btnFermer.Location = new System.Drawing.Point(743, 487);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(75, 23);
+            this.btnFermer.TabIndex = 5;
+            this.btnFermer.Text = "&Fermer";
+            this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
             // 
             // btnSearch
             // 
@@ -85,7 +86,7 @@
             this.ClientSize = new System.Drawing.Size(830, 519);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnArchiver);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.btnAjouter);
             this.Controls.Add(this.grdCollaborateurs);
             this.Name = "frmListCollab";
@@ -101,7 +102,7 @@
 
         internal System.Windows.Forms.DataGridView grdCollaborateurs;
         internal System.Windows.Forms.Button btnAjouter;
-        internal System.Windows.Forms.Button btnArchiver;
+        internal System.Windows.Forms.Button btnFermer;
         internal System.Windows.Forms.Button btnSearch;
         internal System.Windows.Forms.TextBox txtSearch;
     }
