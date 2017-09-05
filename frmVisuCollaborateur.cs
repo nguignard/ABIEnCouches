@@ -12,9 +12,16 @@ namespace ABIEnCouches
 {
     public partial class frmVisuCollaborateur : Form
     {
-        public frmVisuCollaborateur()
+
+        Collaborateur leCollaborateur;
+
+        public frmVisuCollaborateur(Collaborateur unCollab)
         {
+            this.leCollaborateur = unCollab;
             InitializeComponent();
+
+            this.Text = this.leCollaborateur.ToString();
+            this.txtNumeroMatricule.Text = unCollab.Matricule.ToString();
         }
 
         private void btnModifier_Click(object sender, EventArgs e)

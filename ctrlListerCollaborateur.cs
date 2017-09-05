@@ -10,22 +10,20 @@ namespace ABIEnCouches
     public class ctrlListerCollaborateur
     {
         private Collaborateurs listeCollaborateurs;
-        private frmListCollab frmCollaborateurs;
-        private Collaborateur leCollaborateur;
+        private frmListCollab leForm;
+
 
         public ctrlListerCollaborateur()
         {
             this.instancieCollaborateurs();
-            ShowFormListeCollab(this.frmCollaborateurs);
-            this.frmCollaborateurs.grdCollaborateurs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdCollaborateurs_DoubleClick);
+            this.leForm = new frmListCollab(this.listeCollaborateurs);
+            this.leForm.afficheCollaborateurs(this.listeCollaborateurs);
 
+            this.leForm.grdCollaborateurs.CellContentClick  += new DataGridViewCellEventHandler(this.grdCollaborateurs_DoubleClick);
+            this.leForm.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
 
-
-            //this.frmCollaborateurs.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
-
-
-         
-
+            this.leForm.MdiParent = frmMDI.Ref;
+            this.leForm.Show();
         }
 
 
@@ -37,13 +35,14 @@ namespace ABIEnCouches
 
         private void grdCollaborateurs_DoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            Collaborateur leCollaborateur;
             Int32 laCle; //matriculle
-            laCle = (Int32)frmCollaborateurs.grdCollaborateurs.CurrentRow.Cells[0].Value;
-            this.leCollaborateur = listeCollaborateurs.RestituerCollaborateur(laCle);
-            ctrlVisuCollaborateur ctrlVisu = new ctrlVisuCollaborateur(leCollaborateur);
-            
-            this.frmCollaborateurs.afficheCollaborateurs(listeCollaborateurs);
+            laCle = (Int32)leForm.grdCollaborateurs.CurrentRow.Cells[0].Value;
 
+            leCollaborateur = this.listeCollaborateurs.RestituerCollaborateur(laCle);
+            ctrlVisuModifCollaborateur ctrlVisu = new ctrlVisuModifCollaborateur(leCollaborateur);
+            
+            this.leForm.afficheCollaborateurs(listeCollaborateurs);
         }
 
 
@@ -72,30 +71,6 @@ namespace ABIEnCouches
 
             Console.Write(listeCollaborateurs.RestituerCollaborateur(2).ToString());
             Console.Write(collaborateur.RestituerContrat(2).ToString());
-        }
-
-        /// <summary>
-        /// initialisation dialogue modal sur la liste des collaborateurs
-        /// </summary>
-        private void ShowFormListeCollab(frmListCollab frmCollaborateurs)
-        {
-            if (frmCollaborateurs == null)
-            {
-                frmCollaborateurs = new frmListCollab(this.listeCollaborateurs);
-                frmCollaborateurs.MdiParent = frmMDI.Ref;
-                frmCollaborateurs.FormClosing += new FormClosingEventHandler(this.closingFrmListCollab);
-                frmCollaborateurs.Text = "Liste des Collaborateurs";
-                frmCollaborateurs.Show();
-            }
-            else
-            {
-                frmCollaborateurs.Activate();
-            }
-        }
-
-        private void closingFrmListCollab(object sender, FormClosingEventArgs e)
-        {
-            frmCollaborateurs = null;
         }
 
 

@@ -115,5 +115,9 @@ namespace ABIEnCouches
             }
         }
 
+        private void openToolStripButton_Click(object sender, EventArgs e)
+        {
+            ctrlListerCollaborateur ctrl = new ctrlListerCollaborateur();
+        }
     }
 }

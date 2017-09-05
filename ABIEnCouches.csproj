@@ -46,7 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ctrlListerCollaborateur.cs" />
-    <Compile Include="ctrlVisuCollaborateur.cs" />
+    <Compile Include="ctrlVisuModifCollaborateur.cs" />
+    <Compile Include="frmAjouterCollab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjouterCollab.Designer.cs">
+      <DependentUpon>frmAjouterCollab.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListCollab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAjouterCollab.resx">
+      <DependentUpon>frmAjouterCollab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListCollab.resx">
       <DependentUpon>frmListCollab.cs</DependentUpon>
     </EmbeddedResource>
