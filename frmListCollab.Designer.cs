@@ -52,6 +52,7 @@
             this.btnAjouter.TabIndex = 4;
             this.btnAjouter.Text = "&Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+          
             // 
             // btnArchiver
             // 
@@ -100,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grdCollaborateurs;
-        private System.Windows.Forms.Button btnAjouter;
+        internal System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnArchiver;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;

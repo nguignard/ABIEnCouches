@@ -10,31 +10,20 @@ namespace ABIEnCouches
     public class ctrlListerCollaborateur
     {
 
-
-        private frmListCollab frmCollaborateurs;
+        frmListCollab frmCollaborateurs;
 
         public ctrlListerCollaborateur()
         {
-            instancieCollaborateurs();
-
-            frmMDI.Ref.collaborateursToolStripMenuItem.Click += new System.EventHandler(this.collaborateursToolStripMenuItem_Click);
-            //ShowFormListerCollab();            
-
-              
-            
-        }
-
-
-
-
-
-
-
-
-        private void collaborateursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+            this.instancieCollaborateurs();
             ShowFormListerCollab();
+
+            this.frmCollaborateurs.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+
+       
+
         }
+
+
 
 
         /// <summary>
@@ -49,15 +38,12 @@ namespace ABIEnCouches
                 frmCollaborateurs.FormClosing += new FormClosingEventHandler(this.closingFrmListCollab);
                 frmCollaborateurs.Text = "Liste des Collaborateurs";
                 frmCollaborateurs.Show();
+
             }
             else
             {
                 frmCollaborateurs.Activate();
             }
-
-
-
-
 
 
 
@@ -69,12 +55,29 @@ namespace ABIEnCouches
             frmCollaborateurs = null;
         }
 
+
+
+
+
+
+
+
+
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+
+
+
         /// <summary>
         /// initialiseListeCollab()
         /// </summary>
         private void instancieCollaborateurs()
         {
-          
+
             Collaborateur collaborateur = new Collaborateur("M", "DUPOND", "Roger", "marie", true);
             Cdi contrat = new Cdi(new DateTime(2010, 5, 5), "Chef de Projet", "Cadre", 5000);
 
@@ -90,6 +93,11 @@ namespace ABIEnCouches
             Console.Write(Collaborateur.RestituerCollaborateur(2).ToString());
             Console.Write(collaborateur.RestituerContrat(2).ToString());
         }
+
+
+
+
+
 
     }
 }

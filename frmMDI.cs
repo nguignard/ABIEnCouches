@@ -23,8 +23,16 @@ namespace ABIEnCouches
         {
             frmMDI.Ref = this;
             InitializeComponent();
-            ctrlListerCollaborateur ctrlListerCollab = new ctrlListerCollaborateur();
         }
+
+
+        //MENU frmMDI----------------------------------------------------
+        private void collaborateursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ctrlListerCollaborateur ctrl = new ctrlListerCollaborateur();
+        }
+
+
 
 
 

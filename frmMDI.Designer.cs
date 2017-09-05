@@ -87,6 +87,7 @@
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
+         
             // 
             // menuStrip
             // 
@@ -100,7 +101,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(936, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1161, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -148,6 +149,7 @@
             this.collaborateursToolStripMenuItem.Name = "collaborateursToolStripMenuItem";
             this.collaborateursToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.collaborateursToolStripMenuItem.Text = "Collaborateurs";
+            this.collaborateursToolStripMenuItem.Click += new System.EventHandler(this.collaborateursToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -446,7 +448,7 @@
             this.helpToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(936, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1161, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -518,9 +520,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 562);
+            this.statusStrip.Location = new System.Drawing.Point(0, 694);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(936, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1161, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -534,7 +536,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 584);
+            this.ClientSize = new System.Drawing.Size(1161, 716);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
@@ -553,7 +555,7 @@
 
         }
         #endregion
-
+        
 
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStrip toolStrip;
