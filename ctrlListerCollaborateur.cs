@@ -29,7 +29,7 @@ namespace ABIEnCouches
 
         private void btnAjouter_Click(object sender, EventArgs e)
         {
-
+            ctrlAjouterCollaborateur ctrl = new ctrlAjouterCollaborateur();
 
         }
 

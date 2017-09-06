@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ctrlAjouterCollaborateur.cs" />
     <Compile Include="ctrlListerCollaborateur.cs" />
     <Compile Include="ctrlVisuModifCollaborateur.cs" />
     <Compile Include="frmAjouterCollab.cs">

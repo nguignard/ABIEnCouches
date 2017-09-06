@@ -17,12 +17,16 @@ namespace ABIEnCouches
             this.leForm = new frmVisuCollaborateur(leCollaborateur);
             this.leForm.Text = leCollaborateur.ToString();
 
+
             this.leForm.ShowDialog();
 
 
 
 
+
+
         }
+
 
 
 
