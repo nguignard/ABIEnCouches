@@ -12,6 +12,10 @@ namespace ABIEnCouches
 {
     public partial class frmAjouterCollab : Form
     {
+
+        private Collaborateur newCollaborateur;
+        private ContratType newContrat;
+
         public frmAjouterCollab()
         {
             InitializeComponent();
@@ -21,49 +25,95 @@ namespace ABIEnCouches
 
         internal void Instancie()
         {
+
             try
             {
-                private string sexe = "F";
-                if (this.rdbM.Checked )
+                string sexe = "F";
+                if (this.rdbM.Checked)
                 {
-                    newCollaborateur.Civilite = "M";
+                    sexe = "M";
                 }
 
-                newCollaborateur.NomCollab = this.txtNom.Text;
-                newCollaborateur.PrenomCollab = this.txtNom.Text;
-                newCollaborateur.SituationFamiliale = this.cmbFamille.SelectedItem.ToString();
-
-
-
-
-
-                
-                    
-                    
-                //    .enabled = true;
-                //this.lbldatefin.enabled = false;
-                
-                //this.lbldatedebut.enabled = true;
-                //this.lblnom.enabled = true;
-                //this.lblprenom.enabled = true;
-                //this.lblqualification.enabled = true;
-                //this.lblsalaire.enabled = true;
-                //this.lblsituation.enabled = true;
-                //this.lblstatut.enabled = true;
-                //this.lblecole.enabled = true;
-                //this.lblmission.enabled = true;
-
-
-
-
+                newCollaborateur = new Collaborateur(   sexe,
+                                                        this.txtNom.Text,
+                                                        this.txtPrenom.Text,
+                                                        this.cmbFamille.SelectedItem.ToString(),
+                                                        true);
 
             }
             catch (Exception ex)
             {
-
-                throw ;
+                throw new Exception( "Il y a une erreur dans la création du collaborateur");
             }
+
+
+            try
+            {
+                
+                if (this.rdbCDI.Checked)
+                {
+                    newContrat = new Cdi(
+                        this.dateDebut.Value.Date,
+                        this.txtQualif.Text,
+                        this.txtStatut.Text,
+                        Convert.ToDecimal(this.txtSalaire.Text)
+                      );
+                }
+                else if (this.rdbCDD.Checked)
+                {
+                    newContrat = new Cdd(
+                     this.dateDebut.Value.Date,
+                     this.txtQualif.Text,
+                     this.txtStatut.Text,
+                     Convert.ToDecimal(this.txtSalaire.Text),
+                     this.dateFin.Value.Date,
+                     this.txtMotif.Text
+                   );
+
+                }
+                else if(this.rdbStage.Checked)
+                {
+                    newContrat = new Stagiaire(
+                      this.txtEcole.Text,
+                      this.txtMission.Text,
+                       this.txtMotif.Text,
+                      this.dateDebut.Value.Date,
+                      this.dateFin.Value.Date,
+                      this.txtQualif.Text,
+                      this.txtStatut.Text,
+                      Convert.ToDecimal(this.txtSalaire.Text)                    
+                    );
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+            }
+            
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+
+
+
+
+
         }
+
+
+
 
 
 
@@ -122,7 +172,7 @@ namespace ABIEnCouches
             //this.lblEcole.Text = "";
             //this.lblMission.Text = "";
             //this.lblMotif.Text = "";
-            }
+         }
 
         // GESTION DE L'AFFICHGE DE CHAMPS DE CONTRAT----------------------------------------------------------
         /// <summary>
@@ -192,5 +242,6 @@ namespace ABIEnCouches
         {
             this.AfficheContrat();
         }
+
     }
 }

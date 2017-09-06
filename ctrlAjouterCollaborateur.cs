@@ -19,10 +19,7 @@ namespace ABIEnCouches
             this.leForm.btnValider.Click += new System.EventHandler(this.btnValider_Click);
 
             this.leForm.ShowDialog();
-
         }
-
-
 
 
 
