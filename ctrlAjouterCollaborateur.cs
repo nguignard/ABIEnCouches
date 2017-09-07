@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ABIEnCouches
 {
     class ctrlAjouterCollaborateur
     {
-        Collaborateur leCollaborateur;
-        frmAjouterCollab leForm;
+        private frmAjouterCollab leForm;
 
-       public ctrlAjouterCollaborateur()
+        private Collaborateur leCollaborateur;
+        private ContratType leContrat; 
+        private DialogResult result;
+
+        public ctrlAjouterCollaborateur()
         {
             leForm = new frmAjouterCollab();
            
@@ -21,11 +25,40 @@ namespace ABIEnCouches
             this.leForm.ShowDialog();
         }
 
+        //GET SUR VARIABLE A ENTRER DANS LES COLLECTIONS
+        public Collaborateur LeCollaborateur
+        {
+            get
+            {
+                return leCollaborateur;
+            }
+        }
+        
+        public DialogResult Result
+        {
+            get
+            {
+                return result;
+            }
+        }
 
 
+        //FONCTIONS-------------------------------------------------------------
         private void btnValider_Click(object sender, EventArgs e)
         {
-            this.leForm.Instancie();
+            if (this.leForm.Controle())
+            {
+                if (this.leForm.InstancieCollaborateur())
+                {
+                    this.leForm.DialogResult = DialogResult.OK;
+                    this.result = DialogResult.OK;
+                    this.leCollaborateur = this.leForm.NewCollaborateur;
+                }
+                else
+                {
+                    this.result = DialogResult.No;
+                }
+            }
         }
 
 

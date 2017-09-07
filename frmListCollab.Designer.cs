@@ -43,7 +43,6 @@
             this.grdCollaborateurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCollaborateurs.Location = new System.Drawing.Point(12, 98);
             this.grdCollaborateurs.Name = "grdCollaborateurs";
-            this.grdCollaborateurs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdCollaborateurs.Size = new System.Drawing.Size(806, 311);
             this.grdCollaborateurs.TabIndex = 0;
             // 

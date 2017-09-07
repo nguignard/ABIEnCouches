@@ -19,10 +19,23 @@ namespace ABIEnCouches
         {
             this.leCollaborateur = unCollab;
             InitializeComponent();
+            this.AfficheCollab(this.leCollaborateur);
 
+
+        }
+
+
+        private void AfficheCollab(Collaborateur unCollab)
+        {
             this.Text = this.leCollaborateur.ToString();
             this.txtNumeroMatricule.Text = unCollab.Matricule.ToString();
+            this.txtNom.Text = unCollab.NomCollab;
+            this.txtPrenom.Text = unCollab.PrenomCollab;
+            this.rdbM.Checked = unCollab.Civilite == "M" ? true : false;
+            this.rdbF.Checked = unCollab.Civilite == "F" ? true : false;
+            this.cmbFamille.SelectedItem = unCollab.SituationFamiliale;
         }
+
 
         private void btnModifier_Click(object sender, EventArgs e)
         {

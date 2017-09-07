@@ -31,6 +31,13 @@ namespace ABIEnCouches
         {
             ctrlAjouterCollaborateur ctrl = new ctrlAjouterCollaborateur();
 
+            if(ctrl.Result == DialogResult.OK)
+            {
+                this.listeCollaborateurs.AddCollaborateur(ctrl.LeCollaborateur);
+                this.leForm.afficheCollaborateurs(this.listeCollaborateurs);
+
+            }
+
         }
 
         private void grdCollaborateurs_DoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -58,12 +65,12 @@ namespace ABIEnCouches
 
             listeCollaborateurs = new Collaborateurs();
             Collaborateur collaborateur = new Collaborateur("M", "DUPOND", "Roger", "marie", true);
-            Cdi contrat = new Cdi(new DateTime(2010, 5, 5), "Chef de Projet", "Cadre", 5000);
+            Cdi contrat = new Cdi(new DateTime(2010, 5, 5).Date, "Chef de Projet", "Cadre", 5000);
 
             collaborateur.AddContrat(contrat);
             listeCollaborateurs.AddCollaborateur(collaborateur);
             collaborateur = new Collaborateur("F", "DUPONt", "Rogee", "marie", false);
-            contrat = new Cdi(new DateTime(2012, 6, 6), "CDI", "employee", 1500);
+            contrat = new Cdi(new DateTime(2012, 6, 6).Date, "CDI", "employee", 1500);
 
             collaborateur.AddContrat(contrat);
             listeCollaborateurs.AddCollaborateur(collaborateur);

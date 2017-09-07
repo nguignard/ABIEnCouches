@@ -34,9 +34,9 @@
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblSituation = new System.Windows.Forms.Label();
             this.pctBox = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.dateEmbauche = new System.Windows.Forms.DateTimePicker();
             this.txtNumeroMatricule = new System.Windows.Forms.TextBox();
             this.cmbFamille = new System.Windows.Forms.ComboBox();
             this.btnModifier = new System.Windows.Forms.Button();
@@ -46,8 +46,8 @@
             this.btnCreateContrat = new System.Windows.Forms.Button();
             this.lblCivilite = new System.Windows.Forms.Label();
             this.grpCivil = new System.Windows.Forms.GroupBox();
-            this.rdbM = new System.Windows.Forms.RadioButton();
             this.rdbF = new System.Windows.Forms.RadioButton();
+            this.rdbM = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdContrats)).BeginInit();
             this.grpCivil.SuspendLayout();
@@ -107,28 +107,28 @@
             this.pctBox.TabIndex = 6;
             this.pctBox.TabStop = false;
             // 
-            // textBox3
+            // txtPrenom
             // 
-            this.textBox3.Location = new System.Drawing.Point(133, 248);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(200, 20);
-            this.textBox3.TabIndex = 10;
+            this.txtPrenom.Location = new System.Drawing.Point(133, 248);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.ReadOnly = true;
+            this.txtPrenom.Size = new System.Drawing.Size(200, 20);
+            this.txtPrenom.TabIndex = 10;
             // 
-            // textBox4
+            // txtNom
             // 
-            this.textBox4.Location = new System.Drawing.Point(133, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(200, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtNom.Location = new System.Drawing.Point(133, 223);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.ReadOnly = true;
+            this.txtNom.Size = new System.Drawing.Size(200, 20);
+            this.txtNom.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dateEmbauche
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 298);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dateEmbauche.Location = new System.Drawing.Point(133, 298);
+            this.dateEmbauche.Name = "dateEmbauche";
+            this.dateEmbauche.Size = new System.Drawing.Size(200, 20);
+            this.dateEmbauche.TabIndex = 17;
             // 
             // txtNumeroMatricule
             // 
@@ -215,6 +215,16 @@
             this.grpCivil.TabIndex = 26;
             this.grpCivil.TabStop = false;
             // 
+            // rdbF
+            // 
+            this.rdbF.AutoSize = true;
+            this.rdbF.Location = new System.Drawing.Point(109, 13);
+            this.rdbF.Name = "rdbF";
+            this.rdbF.Size = new System.Drawing.Size(31, 17);
+            this.rdbF.TabIndex = 1;
+            this.rdbF.Text = "F";
+            this.rdbF.UseVisualStyleBackColor = true;
+            // 
             // rdbM
             // 
             this.rdbM.AutoSize = true;
@@ -226,16 +236,6 @@
             this.rdbM.TabStop = true;
             this.rdbM.Text = "M";
             this.rdbM.UseVisualStyleBackColor = true;
-            // 
-            // rdbF
-            // 
-            this.rdbF.AutoSize = true;
-            this.rdbF.Location = new System.Drawing.Point(109, 13);
-            this.rdbF.Name = "rdbF";
-            this.rdbF.Size = new System.Drawing.Size(31, 17);
-            this.rdbF.TabIndex = 1;
-            this.rdbF.Text = "F";
-            this.rdbF.UseVisualStyleBackColor = true;
             // 
             // frmVisuCollaborateur
             // 
@@ -251,9 +251,9 @@
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.cmbFamille);
             this.Controls.Add(this.txtNumeroMatricule);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dateEmbauche);
+            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.pctBox);
             this.Controls.Add(this.lblSituation);
             this.Controls.Add(this.lblPrenom);
@@ -280,9 +280,9 @@
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Label lblSituation;
         private System.Windows.Forms.PictureBox pctBox;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtPrenom;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.DateTimePicker dateEmbauche;
         private System.Windows.Forms.TextBox txtNumeroMatricule;
         private System.Windows.Forms.ComboBox cmbFamille;
         private System.Windows.Forms.Button btnModifier;

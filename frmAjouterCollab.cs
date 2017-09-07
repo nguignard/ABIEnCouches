@@ -12,7 +12,6 @@ namespace ABIEnCouches
 {
     public partial class frmAjouterCollab : Form
     {
-
         private Collaborateur newCollaborateur;
         private ContratType newContrat;
 
@@ -23,9 +22,24 @@ namespace ABIEnCouches
             this.AfficheContrat();
         }
 
-        internal void Instancie()
-        {
 
+        //GET NEW------------------------------------------------
+        /// <summary>
+        /// NewCollaborateur : Getter
+        /// </summary>
+        public Collaborateur NewCollaborateur
+        {
+            get
+            {
+                return newCollaborateur;
+            }
+        }
+        
+
+
+        //INSTANCIATION DU NOUVEAU COLLABORATEUR--------------------------
+        internal bool InstancieCollaborateur()
+        {
             try
             {
                 string sexe = "F";
@@ -40,16 +54,32 @@ namespace ABIEnCouches
                                                         this.cmbFamille.SelectedItem.ToString(),
                                                         true);
 
+                this.instancieContrat();
+                this.newCollaborateur.AddContrat(newContrat);
+
+                return true;
             }
             catch (Exception ex)
             {
-                throw new Exception( "Il y a une erreur dans la création du collaborateur");
+                newCollaborateur = null;
+                newContrat = null;
+                ex.Message.ToString();
+                return false;
+            
             }
 
+        
 
-            try
-            {
-                
+
+            
+        }
+
+        /// <summary>
+        /// instancieContrat() devra être placer dans frmNewContrat
+        /// </summary>
+        /// <returns></returns>
+        internal void instancieContrat()
+        {
                 if (this.rdbCDI.Checked)
                 {
                     newContrat = new Cdi(
@@ -58,6 +88,7 @@ namespace ABIEnCouches
                         this.txtStatut.Text,
                         Convert.ToDecimal(this.txtSalaire.Text)
                       );
+
                 }
                 else if (this.rdbCDD.Checked)
                 {
@@ -71,7 +102,7 @@ namespace ABIEnCouches
                    );
 
                 }
-                else if(this.rdbStage.Checked)
+                else
                 {
                     newContrat = new Stagiaire(
                       this.txtEcole.Text,
@@ -81,44 +112,36 @@ namespace ABIEnCouches
                       this.dateFin.Value.Date,
                       this.txtQualif.Text,
                       this.txtStatut.Text,
-                      Convert.ToDecimal(this.txtSalaire.Text)                    
+                      Convert.ToDecimal(this.txtSalaire.Text)
                     );
-
                 }
-
-
-
-
-
-
-
-
-
-
-
-            }
-            
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-
-
-
-
-
-
         }
 
+        internal Boolean Controle()
+        { return true; }
 
 
 
 
 
-
-
+        /// <summary>
+        /// whiteForm() réinitialise le form en blanc
+        /// </summary>
+        private void whiteForm()
+        {
+            this.txtNom.Text = "";
+            this.txtPrenom.Text = "";
+            this.txtEcole.Text = "";
+            this.txtMission.Text = "";
+            this.txtMotif.Text = "";
+            this.txtQualif.Text = "";
+            this.txtSalaire.Text = "";
+            this.txtStatut.Text = "";
+            this.cmbFamille.Items.Clear();
+            this.cmbFamille.Items.AddRange(new String[] { "Célibataire", "Marée", "Divorcé" });
+            this.rdbCDI.Checked = true;
+            this.rdbM.Checked = true;
+        }
 
         /// <summary>
         /// btnCancel_Click
@@ -149,32 +172,7 @@ namespace ABIEnCouches
             }
         }
 
-        /// <summary>
-        /// whiteForm() réinitialise le form en blanc
-        /// </summary>
-        private void whiteForm()
-        {
-            this.txtNom.Text = "";
-            this.txtPrenom.Text = "";
-            this.txtEcole.Text = "";
-            this.txtMission.Text = "";
-            this.txtMotif.Text = "";
-            this.txtQualif.Text = "";
-            this.txtSalaire.Text = "";
-            this.txtStatut.Text = "";
-            this.cmbFamille.Items.AddRange(new String[] { "Celibataire","Marié","Divorcer"});
-
-
-            this.rdbCDI.Checked = true;
-            this.rdbM.Checked = true;
-
-            //this.lblStatut.Text = "";
-            //this.lblEcole.Text = "";
-            //this.lblMission.Text = "";
-            //this.lblMotif.Text = "";
-         }
-
-        // GESTION DE L'AFFICHGE DE CHAMPS DE CONTRAT----------------------------------------------------------
+        // GESTION DE L'AFFICHAGE DE CHAMPS DE CONTRAT----------------------------------------------------------
         /// <summary>
         /// AfficheContrat() gere les accessibilités des composants du form en fonction du type de contrat
         /// </summary>
