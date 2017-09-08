@@ -467,13 +467,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpCivil;
-        private System.Windows.Forms.RadioButton rdbF;
-        private System.Windows.Forms.RadioButton rdbM;
+        internal System.Windows.Forms.RadioButton rdbF;
+        internal System.Windows.Forms.RadioButton rdbM;
         private System.Windows.Forms.Label lblCivilite;
-        private System.Windows.Forms.ComboBox cmbFamille;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.TextBox txtPrenom;
-        private System.Windows.Forms.PictureBox pctBox;
+        internal System.Windows.Forms.ComboBox cmbFamille;
+        internal System.Windows.Forms.TextBox txtNom;
+        internal System.Windows.Forms.TextBox txtPrenom;
+        internal System.Windows.Forms.PictureBox pctBox;
         private System.Windows.Forms.Label lblSituation;
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Label lblNom;
@@ -491,17 +491,17 @@
         private System.Windows.Forms.Label lblEcole;
         private System.Windows.Forms.Label lblMission;
         private System.Windows.Forms.GroupBox grpTypeContrat;
-        private System.Windows.Forms.RadioButton rdbStage;
-        private System.Windows.Forms.RadioButton rdbCDD;
-        private System.Windows.Forms.RadioButton rdbCDI;
+        internal System.Windows.Forms.RadioButton rdbStage;
+        internal System.Windows.Forms.RadioButton rdbCDD;
+        internal System.Windows.Forms.RadioButton rdbCDI;
         private System.Windows.Forms.GroupBox grpStage;
         private System.Windows.Forms.GroupBox grpAttributsContrats;
-        private System.Windows.Forms.TextBox txtMission;
-        private System.Windows.Forms.TextBox txtEcole;
-        private System.Windows.Forms.TextBox txtMotif;
-        private System.Windows.Forms.TextBox txtStatut;
-        private System.Windows.Forms.TextBox txtQualif;
-        private System.Windows.Forms.TextBox txtSalaire;
+        internal System.Windows.Forms.TextBox txtMission;
+        internal System.Windows.Forms.TextBox txtEcole;
+        internal System.Windows.Forms.TextBox txtMotif;
+        internal System.Windows.Forms.TextBox txtStatut;
+        internal System.Windows.Forms.TextBox txtQualif;
+        internal System.Windows.Forms.TextBox txtSalaire;
         private System.Windows.Forms.DateTimePicker dateFin;
         private System.Windows.Forms.DateTimePicker dateDebut;
     }

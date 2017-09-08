@@ -47,12 +47,19 @@
   <ItemGroup>
     <Compile Include="ctrlAjouterCollaborateur.cs" />
     <Compile Include="ctrlListerCollaborateur.cs" />
+    <Compile Include="ctrlVisuContrat.cs" />
     <Compile Include="ctrlVisuModifCollaborateur.cs" />
     <Compile Include="frmAjouterCollab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAjouterCollab.Designer.cs">
       <DependentUpon>frmAjouterCollab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAjouterContrat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAjouterContrat.Designer.cs">
+      <DependentUpon>frmAjouterContrat.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListCollab.cs">
       <SubType>Form</SubType>
@@ -72,10 +79,20 @@
     <Compile Include="frmVisuCollaborateur.Designer.cs">
       <DependentUpon>frmVisuCollaborateur.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisuContrat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisuContrat.Designer.cs">
+      <DependentUpon>frmVisuContrat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Outils.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAjouterCollab.resx">
       <DependentUpon>frmAjouterCollab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAjouterContrat.resx">
+      <DependentUpon>frmAjouterContrat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListCollab.resx">
       <DependentUpon>frmListCollab.cs</DependentUpon>
@@ -85,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisuCollaborateur.resx">
       <DependentUpon>frmVisuCollaborateur.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisuContrat.resx">
+      <DependentUpon>frmVisuContrat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

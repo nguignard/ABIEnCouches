@@ -46,5 +46,16 @@ namespace ABIEnCouches
         {
 
         }
+
+        
+
+        private void btnFermer_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Voulez vous fermer la fenêtre, Yes pour confirmer", "Fermeture", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }

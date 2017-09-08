@@ -18,7 +18,7 @@ namespace ABIEnCouches
         public frmAjouterCollab()
         {
             InitializeComponent();
-            this.whiteForm();
+            this.whiteCollaborateur();
             this.AfficheContrat();
         }
 
@@ -127,20 +127,15 @@ namespace ABIEnCouches
         /// <summary>
         /// whiteForm() réinitialise le form en blanc
         /// </summary>
-        private void whiteForm()
+        internal void whiteCollaborateur()
         {
             this.txtNom.Text = "";
             this.txtPrenom.Text = "";
-            this.txtEcole.Text = "";
-            this.txtMission.Text = "";
-            this.txtMotif.Text = "";
-            this.txtQualif.Text = "";
-            this.txtSalaire.Text = "";
-            this.txtStatut.Text = "";
-            this.cmbFamille.Items.Clear();
+             this.cmbFamille.Items.Clear();
             this.cmbFamille.Items.AddRange(new String[] { "Célibataire", "Marée", "Divorcé" });
-            this.rdbCDI.Checked = true;
             this.rdbM.Checked = true;
+
+            Outils.WhiteContrat(this);
         }
 
         /// <summary>
@@ -153,7 +148,7 @@ namespace ABIEnCouches
             DialogResult dialogResult = MessageBox.Show("Voulez vous réinitialiser les champs, Yes pour confirmer", "Réinitialisation", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                this.whiteForm();
+                this.whiteCollaborateur();
                 this.AfficheContrat();
             }
         }

@@ -48,6 +48,7 @@
             this.grpCivil = new System.Windows.Forms.GroupBox();
             this.rdbF = new System.Windows.Forms.RadioButton();
             this.rdbM = new System.Windows.Forms.RadioButton();
+            this.btnFermer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdContrats)).BeginInit();
             this.grpCivil.SuspendLayout();
@@ -177,6 +178,7 @@
             this.grdContrats.Name = "grdContrats";
             this.grdContrats.Size = new System.Drawing.Size(459, 281);
             this.grdContrats.TabIndex = 22;
+            
             // 
             // lblContrats
             // 
@@ -237,11 +239,22 @@
             this.rdbM.Text = "M";
             this.rdbM.UseVisualStyleBackColor = true;
             // 
+            // btnFermer
+            // 
+            this.btnFermer.Location = new System.Drawing.Point(785, 332);
+            this.btnFermer.Name = "btnFermer";
+            this.btnFermer.Size = new System.Drawing.Size(75, 23);
+            this.btnFermer.TabIndex = 27;
+            this.btnFermer.Text = "&Fermer";
+            this.btnFermer.UseVisualStyleBackColor = true;
+            this.btnFermer.Click += new System.EventHandler(this.btnFermer_Click);
+            // 
             // frmVisuCollaborateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 366);
+            this.Controls.Add(this.btnFermer);
             this.Controls.Add(this.grpCivil);
             this.Controls.Add(this.lblCivilite);
             this.Controls.Add(this.btnCreateContrat);
@@ -285,14 +298,15 @@
         private System.Windows.Forms.DateTimePicker dateEmbauche;
         private System.Windows.Forms.TextBox txtNumeroMatricule;
         private System.Windows.Forms.ComboBox cmbFamille;
-        private System.Windows.Forms.Button btnModifier;
-        private System.Windows.Forms.Button btnArchiver;
-        private System.Windows.Forms.DataGridView grdContrats;
+        internal System.Windows.Forms.Button btnModifier;
+        internal System.Windows.Forms.Button btnArchiver;
+        internal System.Windows.Forms.DataGridView grdContrats;
         private System.Windows.Forms.Label lblContrats;
         private System.Windows.Forms.Button btnCreateContrat;
         private System.Windows.Forms.Label lblCivilite;
         private System.Windows.Forms.GroupBox grpCivil;
         private System.Windows.Forms.RadioButton rdbF;
         private System.Windows.Forms.RadioButton rdbM;
+        private System.Windows.Forms.Button btnFermer;
     }
 }
