@@ -18,8 +18,9 @@ namespace ABIEnCouches
         public frmAjouterCollab()
         {
             InitializeComponent();
+            this.Text = "Nouveau Collaborateur";
             this.whiteCollaborateur();
-            this.AfficheContrat();
+            this.AfficheBoxContrat();
         }
 
 
@@ -149,7 +150,7 @@ namespace ABIEnCouches
             if (dialogResult == DialogResult.Yes)
             {
                 this.whiteCollaborateur();
-                this.AfficheContrat();
+                this.AfficheBoxContrat();
             }
         }
 
@@ -169,9 +170,9 @@ namespace ABIEnCouches
 
         // GESTION DE L'AFFICHAGE DE CHAMPS DE CONTRAT----------------------------------------------------------
         /// <summary>
-        /// AfficheContrat() gere les accessibilités des composants du form en fonction du type de contrat
+        /// AfficheBoxContrat() gere les accessibilités des composants du form en fonction du type de contrat
         /// </summary>
-        private void AfficheContrat()
+        private void AfficheBoxContrat()
         {
             //this.lblDateFin.Enabled = false;
             //this.lblCivilite.Enabled = true;
@@ -186,7 +187,7 @@ namespace ABIEnCouches
             //this.lblMission.Enabled = true;
 
 
-            this.Text = "Nouveau Collaborateur";
+           
             this.dateFin.Enabled = true;
             this.txtMotif.Enabled = true;
             this.lblMotif.Enabled = true;
@@ -213,7 +214,7 @@ namespace ABIEnCouches
         /// <param name="e"></param>
         private void rdbCDI_CheckedChanged(object sender, EventArgs e)
         {
-            this.AfficheContrat();
+            this.AfficheBoxContrat();
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace ABIEnCouches
         /// <param name="e"></param>
         private void rdbCDD_CheckedChanged(object sender, EventArgs e)
         {
-            this.AfficheContrat();
+            this.AfficheBoxContrat();
         }
 
         /// <summary>
@@ -233,7 +234,7 @@ namespace ABIEnCouches
         /// <param name="e"></param>
         private void rdbStage_CheckedChanged(object sender, EventArgs e)
         {
-            this.AfficheContrat();
+            this.AfficheBoxContrat();
         }
 
     }

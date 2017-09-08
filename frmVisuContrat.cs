@@ -12,7 +12,9 @@ namespace ABIEnCouches
 {
     public partial class frmVisuContrat : Form
     {
-        ContratType leContrat;
+        private ContratType leContrat;
+  
+
         public frmVisuContrat(ContratType leContrat)
         {
             this.leContrat = leContrat;
@@ -39,22 +41,29 @@ namespace ABIEnCouches
 
         private void btnValider_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
 
         //FONCTIONS 
 
         private void AfficheContrat()
         {
-
             this.rdbCDI.Checked = true;
             this.txtQualif.Text = leContrat.Qualification.ToString();
             this.txtSalaire.Text = leContrat.SalaireContractuel.ToString();
             this.txtStatut.Text = leContrat.Statut;
 
+            
+
+
+
             if(leContrat is ContratTemporaire)
             {
-                this.txtMotif.Text = leContrat.m
+                ContratTemporaire  leTemp = (ContratTemporaire)leContrat;
+
+                this.txtMotif.Text = leTemp.Motif;
+                this.dateFin.Value= leTemp.DatFinContrat.Date;
+
             }
         
 

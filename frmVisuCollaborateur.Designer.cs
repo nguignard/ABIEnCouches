@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.lblMatricule = new System.Windows.Forms.Label();
-            this.lblDateEmbauche = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblPrenom = new System.Windows.Forms.Label();
             this.lblSituation = new System.Windows.Forms.Label();
             this.pctBox = new System.Windows.Forms.PictureBox();
             this.txtPrenom = new System.Windows.Forms.TextBox();
             this.txtNom = new System.Windows.Forms.TextBox();
-            this.dateEmbauche = new System.Windows.Forms.DateTimePicker();
             this.txtNumeroMatricule = new System.Windows.Forms.TextBox();
             this.cmbFamille = new System.Windows.Forms.ComboBox();
             this.btnModifier = new System.Windows.Forms.Button();
@@ -62,15 +60,6 @@
             this.lblMatricule.Size = new System.Drawing.Size(50, 13);
             this.lblMatricule.TabIndex = 0;
             this.lblMatricule.Text = "Matricule";
-            // 
-            // lblDateEmbauche
-            // 
-            this.lblDateEmbauche.AutoSize = true;
-            this.lblDateEmbauche.Location = new System.Drawing.Point(10, 302);
-            this.lblDateEmbauche.Name = "lblDateEmbauche";
-            this.lblDateEmbauche.Size = new System.Drawing.Size(93, 13);
-            this.lblDateEmbauche.TabIndex = 1;
-            this.lblDateEmbauche.Text = "Date D\'embauche";
             // 
             // lblNom
             // 
@@ -124,13 +113,6 @@
             this.txtNom.Size = new System.Drawing.Size(200, 20);
             this.txtNom.TabIndex = 11;
             // 
-            // dateEmbauche
-            // 
-            this.dateEmbauche.Location = new System.Drawing.Point(133, 298);
-            this.dateEmbauche.Name = "dateEmbauche";
-            this.dateEmbauche.Size = new System.Drawing.Size(200, 20);
-            this.dateEmbauche.TabIndex = 17;
-            // 
             // txtNumeroMatricule
             // 
             this.txtNumeroMatricule.Location = new System.Drawing.Point(133, 161);
@@ -178,7 +160,6 @@
             this.grdContrats.Name = "grdContrats";
             this.grdContrats.Size = new System.Drawing.Size(459, 281);
             this.grdContrats.TabIndex = 22;
-            
             // 
             // lblContrats
             // 
@@ -264,14 +245,12 @@
             this.Controls.Add(this.btnModifier);
             this.Controls.Add(this.cmbFamille);
             this.Controls.Add(this.txtNumeroMatricule);
-            this.Controls.Add(this.dateEmbauche);
             this.Controls.Add(this.txtNom);
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.pctBox);
             this.Controls.Add(this.lblSituation);
             this.Controls.Add(this.lblPrenom);
             this.Controls.Add(this.lblNom);
-            this.Controls.Add(this.lblDateEmbauche);
             this.Controls.Add(this.lblMatricule);
             this.Name = "frmVisuCollaborateur";
             this.Text = "0";
@@ -288,14 +267,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblMatricule;
-        private System.Windows.Forms.Label lblDateEmbauche;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.Label lblSituation;
         private System.Windows.Forms.PictureBox pctBox;
         private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.DateTimePicker dateEmbauche;
         private System.Windows.Forms.TextBox txtNumeroMatricule;
         private System.Windows.Forms.ComboBox cmbFamille;
         internal System.Windows.Forms.Button btnModifier;
