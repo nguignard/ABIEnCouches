@@ -254,7 +254,6 @@
             this.Controls.Add(this.lblMatricule);
             this.Name = "frmVisuCollaborateur";
             this.Text = "0";
-            this.Load += new System.EventHandler(this.frmVisuCollaborateur_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdContrats)).EndInit();
             this.grpCivil.ResumeLayout(false);

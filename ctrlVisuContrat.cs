@@ -25,6 +25,11 @@ namespace ABIEnCouches
 
 
 
+            //frmVisuContrat visuContrat = new frmVisuContrat();
+
+            
+
+
 
 
         }

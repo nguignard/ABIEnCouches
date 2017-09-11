@@ -20,7 +20,7 @@ namespace ABIEnCouches
             InitializeComponent();
             this.Text = "Nouveau Collaborateur";
             this.whiteCollaborateur();
-            this.AfficheBoxContrat();
+            this.AfficheWindowContrat();
         }
 
 
@@ -124,21 +124,6 @@ namespace ABIEnCouches
 
 
 
-
-        /// <summary>
-        /// whiteForm() réinitialise le form en blanc
-        /// </summary>
-        internal void whiteCollaborateur()
-        {
-            this.txtNom.Text = "";
-            this.txtPrenom.Text = "";
-             this.cmbFamille.Items.Clear();
-            this.cmbFamille.Items.AddRange(new String[] { "Célibataire", "Marée", "Divorcé" });
-            this.rdbM.Checked = true;
-
-            Outils.WhiteContrat(this);
-        }
-
         /// <summary>
         /// btnCancel_Click
         /// </summary>
@@ -150,7 +135,7 @@ namespace ABIEnCouches
             if (dialogResult == DialogResult.Yes)
             {
                 this.whiteCollaborateur();
-                this.AfficheBoxContrat();
+                this.AfficheWindowContrat();
             }
         }
 
@@ -169,10 +154,74 @@ namespace ABIEnCouches
         }
 
         // GESTION DE L'AFFICHAGE DE CHAMPS DE CONTRAT----------------------------------------------------------
+     
+        /// <summary>
+        /// rdbCDI_CheckedChanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rdbCDI_CheckedChanged(object sender, EventArgs e)
+        {
+            this.AfficheWindowContrat();
+        }
+
+        /// <summary>
+        /// rdbCDD_CheckedChanged
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rdbCDD_CheckedChanged(object sender, EventArgs e)
+        {
+            this.AfficheWindowContrat();
+        }
+
+
+
+
+    /// <summary>
+    /// rdbStage_CheckedChanged
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void rdbStage_CheckedChanged(object sender, EventArgs e)
+        {
+            this.AfficheWindowContrat();
+        }
+
+
+        //FONCTIONS-----------------------------------
+
+
+        internal void WhiteContrat()
+        {
+            this.txtEcole.Text = "";
+            this.txtMission.Text = "";
+            this.txtMotif.Text = "";
+            this.txtQualif.Text = "";
+            this.txtSalaire.Text = "";
+            this.txtStatut.Text = "";
+            this.rdbCDI.Checked = true;
+        }
+
+    /// <summary>
+    /// whiteForm() réinitialise le form en blanc
+    /// </summary>
+    internal void whiteCollaborateur()
+    {
+        this.txtNom.Text = "";
+        this.txtPrenom.Text = "";
+        this.cmbFamille.Items.Clear();
+        this.cmbFamille.Items.AddRange(new String[] { "Célibataire", "Marée", "Divorcé" });
+        this.rdbM.Checked = true;
+
+        this.WhiteContrat();
+    }
+
+
         /// <summary>
         /// AfficheBoxContrat() gere les accessibilités des composants du form en fonction du type de contrat
         /// </summary>
-        private void AfficheBoxContrat()
+        private void AfficheWindowContrat()
         {
             //this.lblDateFin.Enabled = false;
             //this.lblCivilite.Enabled = true;
@@ -187,7 +236,7 @@ namespace ABIEnCouches
             //this.lblMission.Enabled = true;
 
 
-           
+
             this.dateFin.Enabled = true;
             this.txtMotif.Enabled = true;
             this.lblMotif.Enabled = true;
@@ -201,41 +250,13 @@ namespace ABIEnCouches
                 this.grpStage.Enabled = false;
             }
 
-            if(this.rdbCDD.Checked == true)
+            if (this.rdbCDD.Checked == true)
             {
                 this.grpStage.Enabled = false;
             }
         }
 
-        /// <summary>
-        /// rdbCDI_CheckedChanged
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdbCDI_CheckedChanged(object sender, EventArgs e)
-        {
-            this.AfficheBoxContrat();
-        }
 
-        /// <summary>
-        /// rdbCDD_CheckedChanged
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdbCDD_CheckedChanged(object sender, EventArgs e)
-        {
-            this.AfficheBoxContrat();
-        }
-
-        /// <summary>
-        /// rdbStage_CheckedChanged
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void rdbStage_CheckedChanged(object sender, EventArgs e)
-        {
-            this.AfficheBoxContrat();
-        }
 
     }
 }

@@ -13,12 +13,14 @@ namespace ABIEnCouches
     public partial class frmVisuContrat : Form
     {
         private ContratType leContrat;
-  
+        private frmVisuCollaborateur leForm;
 
-        public frmVisuContrat(ContratType leContrat)
+        public frmVisuContrat(frmVisuCollaborateur unForm)
         {
-            this.leContrat = leContrat;
+            this.leForm = unForm;
             InitializeComponent();
+            unForm.grdContrats.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdContrats_CellContentClick);
+
         }
 
         private void btnFermer_Click(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace ABIEnCouches
             if (dialogResult == DialogResult.Yes)
             {
                 this.AfficheContrat();
+                this.AfficheWindowContrat();
             }
         }
 
@@ -43,19 +46,23 @@ namespace ABIEnCouches
         {
             //TODO
         }
+        private void grdContrats_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+           
+        }
+
+
 
         //FONCTIONS 
 
-        private void AfficheContrat()
+        internal void AfficheContrat()
         {
             this.rdbCDI.Checked = true;
             this.txtQualif.Text = leContrat.Qualification.ToString();
             this.txtSalaire.Text = leContrat.SalaireContractuel.ToString();
             this.txtStatut.Text = leContrat.Statut;
-
-            
-
-
 
             if(leContrat is ContratTemporaire)
             {
@@ -63,13 +70,64 @@ namespace ABIEnCouches
 
                 this.txtMotif.Text = leTemp.Motif;
                 this.dateFin.Value= leTemp.DatFinContrat.Date;
+            }
+
+            if (leContrat is Cdd)
+            {
+                Cdd leTemp = (Cdd)leContrat;
+                this.rdbCDD.Checked = true;
 
             }
-        
 
-            this.txtEcole.Text = this.leContrat.;
-            this.txtMission.Text = "";
+            if (leContrat is Stagiaire)
+            {
+                Stagiaire leTemp = (Stagiaire)leContrat;
+                this.rdbStage.Checked = true;
+                this.txtEcole.Text = leTemp.Ecole;
+                this.txtMission.Text = leTemp.Mission;
+            }
+           
+
         }
+
+        /// <summary>
+        /// AfficheBoxContrat() gere les accessibilités des composants du form en fonction du type de contrat
+        /// </summary>
+        internal void AfficheWindowContrat()
+        {
+            //this.lblDateFin.Enabled = false;
+            //this.lblCivilite.Enabled = true;
+            //this.lblDateDebut.Enabled = true;
+            //this.lblNom.Enabled = true;
+            //this.lblPrenom.Enabled = true;
+            //this.lblQualification.Enabled = true;
+            //this.lblSalaire.Enabled = true;
+            //this.lblSituation.Enabled = true;
+            //this.lblStatut.Enabled = true;
+            //this.lblEcole.Enabled = true;
+            //this.lblMission.Enabled = true;
+
+
+
+            this.dateFin.Enabled = true;
+            this.txtMotif.Enabled = true;
+            this.lblMotif.Enabled = true;
+            this.grpStage.Enabled = true;
+
+            if (this.rdbCDI.Checked == true)
+            {
+                this.dateFin.Enabled = false;
+                this.txtMotif.Enabled = false;
+                this.lblMotif.Enabled = false;
+                this.grpStage.Enabled = false;
+            }
+
+            if (this.rdbCDD.Checked == true)
+            {
+                this.grpStage.Enabled = false;
+            }
+        }
+
 
 
 

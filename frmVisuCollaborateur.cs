@@ -20,6 +20,8 @@ namespace ABIEnCouches
             this.leCollaborateur = unCollab;
             InitializeComponent();
             this.AfficheCollab(this.leCollaborateur);
+            this.AfficheContrats();
+
 
 
         }
@@ -36,18 +38,17 @@ namespace ABIEnCouches
             this.cmbFamille.SelectedItem = unCollab.SituationFamiliale;
         }
 
+        private void AfficheContrats()
+        {
+            //TODO : initialiser liste de contrats
+        }
+
+
 
         private void btnModifier_Click(object sender, EventArgs e)
         {
-
+            //TODO
         }
-
-        private void frmVisuCollaborateur_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
 
         private void btnFermer_Click(object sender, EventArgs e)
         {
@@ -57,5 +58,6 @@ namespace ABIEnCouches
                 this.Close();
             }
         }
+
     }
 }

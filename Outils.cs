@@ -21,16 +21,6 @@ namespace ABIEnCouches
         }
 
 
-        public static void WhiteContrat(frmAjouterContrat leForm)
-        {
-                leForm.txtEcole.Text = "";
-                leForm.txtMission.Text = "";
-                leForm.txtMotif.Text = "";
-                leForm.txtQualif.Text = "";
-                leForm.txtSalaire.Text = "";
-                leForm.txtStatut.Text = "";
-                leForm.rdbCDI.Checked = true;
-        }
 
         
 
